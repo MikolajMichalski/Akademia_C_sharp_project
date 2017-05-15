@@ -1,0 +1,13 @@
+Imiê i nazwisko: Miko³aj Michalski
+Grupa: 2
+Temat projektu: Aplikacja desktopowa w WPF do zarz¹dzania bud¿etem domowym.
+
+Wstêpny opis: Aplikacja w WPF s³u¿¹ca do zarz¹dzania bud¿etem domowym. Proponowane funkcjonalnoœci to 
+- tworzenie profilu u¿ytkownika, 
+- ustalanie dostêpnej kwoty,
+- podzia³ wydatków na kategorie,
+- mo¿liwoœæ dodawania w³asnych kategorii,
+- mo¿liwoœæ notowania wydatków w poszczególnych kategoriach oraz zapisywanie ich w bazie danych,
+- mozliwoœæ ustalenia maksymalnej kwoty dla ka¿dej kategorii,
+- aplikacja informuje komunikatem jeœli u¿ytkownik zbli¿a siê do ustalonej kwoty,
+- mo¿liwoœæ planowania przysz³ych wydatków opcjonalnych, które bêd¹ "liczyæ siê" dopiero po potwierdzeniu przez u¿ytkownika. 
