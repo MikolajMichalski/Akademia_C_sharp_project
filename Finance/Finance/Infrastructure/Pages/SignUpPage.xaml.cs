@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Finance.Infrastructure.Services;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,14 +22,25 @@ namespace Finance.Pages
     /// </summary>
     public partial class SignUpPage : Page
     {
+        LoginPage loginPage = new LoginPage();
+
+
         public SignUpPage()
         {
             InitializeComponent();
+
         }
 
         private void Create(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MainPage());
+            DatabaseService dbS = new DatabaseService();
+            var user = new User(int.Parse(IdBox.Text), NameBox.Text, LastNameBox.Text);
+
+            dbS.InsertUser(user);
+            loginPage.UsersList.Items.Refresh();
+            NavigationService.Navigate(loginPage);
+            
+                      
         }
     }
 }

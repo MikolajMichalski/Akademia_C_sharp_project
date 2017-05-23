@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finance.Infrastructure.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +15,23 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Finance.Pages
-{
+{   
+    
     /// <summary>
     /// Interaction logic for LoginPage.xaml
     /// </summary>
     public partial class LoginPage : Page
     {
-        
+
+        DatabaseService dbS = new DatabaseService();
         public LoginPage()
         {
             InitializeComponent();
+            dbS.StartupUsersLoading();
+            UsersList.Items.Refresh();
+            UsersList.ItemsSource = dbS.usersList;
             
+        
         }
 
         private void SignUp(object sender, RoutedEventArgs e)

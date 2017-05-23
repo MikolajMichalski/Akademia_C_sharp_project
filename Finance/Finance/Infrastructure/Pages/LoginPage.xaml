@@ -13,9 +13,13 @@
             <Label FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center">Finance App</Label>
             <Label Margin="5" HorizontalAlignment="Center" FontSize="20">Choose User</Label>
             <ListView x:Name="UsersList" Width="400" Height="200" >
-                <ListView.Items>
-                    <ListViewItem/>
-                </ListView.Items>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding UserId}"/>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}"/>
+                    </GridView>
+                </ListView.View>
             </ListView>
             <Grid Width="300">
                 <Button Content="Login" Width="100" Height="30" Margin="10" HorizontalAlignment="Left"/>
