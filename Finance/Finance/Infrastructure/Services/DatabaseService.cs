@@ -8,11 +8,13 @@ using System.Windows;
 
 namespace Finance.Infrastructure.Services
 {
-    class DatabaseService : IDatabaseService
+   public class DatabaseService : IDatabaseService
     {
+        private bool doExecute = true;
         private SqlConnection connection = null;
         public ISet<User> usersList = new HashSet<User>();
 
+      
         public void InsertUser(User user)
         {
             string ConnectionString = "Data Source = MIKOŁAJ\\MIKOŁAJMICHALSKI; Initial Catalog = Finance ; Integrated Security=true;";
@@ -29,6 +31,7 @@ namespace Finance.Infrastructure.Services
                 MessageBox.Show("connection failed");
             }
             SqlCommand command = new SqlCommand(@"INSERT INTO Users (UserID, UserName, UserLastName) VALUES (@userID, @UserName, @UserLastName)", connection);
+
             command.Parameters.AddWithValue("@userID", user.UserId);
             command.Parameters.AddWithValue("@UserName", user.Name);
             command.Parameters.AddWithValue("@UserLastName", user.LastName);
@@ -65,7 +68,9 @@ namespace Finance.Infrastructure.Services
             }
 
             connection.Close();
-
+            doExecute = false;
         }
+
+        
     }
 }

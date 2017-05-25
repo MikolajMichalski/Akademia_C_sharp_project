@@ -67,6 +67,10 @@
       <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\Models\User.cs" />
+    <Page Include="Infrastructure\Pages\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +78,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\Pages\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Services\DatabaseService.cs" />
     <Compile Include="Infrastructure\Services\IDatabaseService.cs" />

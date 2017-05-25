@@ -22,9 +22,9 @@ namespace Finance.Pages
     /// </summary>
     public partial class SignUpPage : Page
     {
-        LoginPage loginPage = new LoginPage();
 
 
+        MainWindow mainWindow = new MainWindow();
         public SignUpPage()
         {
             InitializeComponent();
@@ -32,13 +32,13 @@ namespace Finance.Pages
         }
 
         private void Create(object sender, RoutedEventArgs e)
-        {
-            DatabaseService dbS = new DatabaseService();
+        {           
+           
             var user = new User(int.Parse(IdBox.Text), NameBox.Text, LastNameBox.Text);
-
-            dbS.InsertUser(user);
-            loginPage.UsersList.Items.Refresh();
-            NavigationService.Navigate(loginPage);
+           
+            mainWindow.startPage.loginPage.dbS.InsertUser(user);
+            mainWindow.startPage.loginPage.UsersList.Items.Refresh();
+            NavigationService.Navigate(mainWindow.startPage.loginPage);
             
                       
         }

@@ -1,4 +1,5 @@
-﻿using Finance.Infrastructure.Services;
+﻿using Finance.Infrastructure.Pages;
+using Finance.Infrastructure.Services;
 using Finance.Pages;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,13 @@ namespace Finance
     /// </summary>
     public partial class MainWindow : Window
     {
-        DatabaseService dbS = new DatabaseService();
+      
+        //public LoginPage loginPage = new LoginPage();
+        public StartPage startPage = new StartPage();
         public MainWindow()
-        {
-            
-            InitializeComponent();
-          
-            MainFrame.Navigate(new LoginPage());
+        {            
+            InitializeComponent();                        
+            MainFrame.Navigate(startPage);           
         }
     }
 }
