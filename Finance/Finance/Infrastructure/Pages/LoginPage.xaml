@@ -22,7 +22,7 @@
                 </ListView.View>
             </ListView>
             <Grid Width="300">
-                <Button Content="Login" Width="100" Height="30" Margin="10" HorizontalAlignment="Left"/>
+                <Button Content="Login" Width="100" Height="30" Margin="10" HorizontalAlignment="Left" Click="Login"/>
                 <Button Content="Sign Up" Width="100" Height="30" Margin="10" HorizontalAlignment="Right" Click="SignUp"/>
             </Grid>
           

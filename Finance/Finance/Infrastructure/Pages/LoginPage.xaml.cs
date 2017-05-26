@@ -36,5 +36,10 @@ namespace Finance.Pages
         {
             NavigationService.Navigate(new SignUpPage());          
         }
+
+        private void Login(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

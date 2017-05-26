@@ -30,7 +30,7 @@ namespace Finance.Infrastructure.Services
             {
                 MessageBox.Show("connection failed");
             }
-            SqlCommand command = new SqlCommand(@"INSERT INTO Users (UserID, UserName, UserLastName) VALUES (@userID, @UserName, @UserLastName)", connection);
+            SqlCommand command = new SqlCommand(@"INSERT INTO UsersTable (UserID, UserName, UserLastName) VALUES (@userID, @UserName, @UserLastName)", connection);
 
             command.Parameters.AddWithValue("@userID", user.UserId);
             command.Parameters.AddWithValue("@UserName", user.Name);
@@ -59,7 +59,7 @@ namespace Finance.Infrastructure.Services
                 MessageBox.Show("Connection failed");
             }
 
-            var command = new SqlCommand("SELECT * FROM Users", connection);
+            var command = new SqlCommand("SELECT * FROM UsersTable", connection);
             SqlDataReader dataReader = command.ExecuteReader();
            
             while (dataReader.Read())
