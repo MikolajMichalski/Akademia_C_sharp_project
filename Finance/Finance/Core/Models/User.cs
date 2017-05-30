@@ -14,6 +14,7 @@ namespace Finance
         public string LastName { get; protected set; }
         public float Money { get; protected set; }
         public IEnumerable<Expenses> ExpensesList { get; set; }
+        public string FullName { get { return Name + " " + LastName; }  }
 
 
         public User(int userId, string Name, string LastName)

@@ -63,11 +63,26 @@
     <Compile Include="Infrastructure\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Pages\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\Pages\SignUpPage.xaml.cs">
       <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\Models\User.cs" />
+    <Page Include="Infrastructure\Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Infrastructure\Pages\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Infrastructure\Pages\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Infrastructure\Pages\WorkSpaceFrame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,6 +97,9 @@
     <Compile Include="Infrastructure\Pages\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Pages\WorkSpaceFrame.xaml.cs">
+      <DependentUpon>WorkSpaceFrame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\Services\DatabaseService.cs" />
     <Compile Include="Infrastructure\Services\IDatabaseService.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -89,10 +107,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Infrastructure\Pages\LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Infrastructure\Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

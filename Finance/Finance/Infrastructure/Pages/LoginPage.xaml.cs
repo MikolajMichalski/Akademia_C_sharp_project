@@ -1,4 +1,5 @@
-﻿using Finance.Infrastructure.Services;
+﻿using Finance.Infrastructure.Pages;
+using Finance.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace Finance.Pages
     /// </summary>
     public partial class LoginPage : Page
     {
-
+        WorkSpaceFrame WSP = new WorkSpaceFrame();
         public DatabaseService dbS = new DatabaseService();
         public LoginPage()
         {           
@@ -39,6 +40,13 @@ namespace Finance.Pages
 
         private void Login(object sender, RoutedEventArgs e)
         {
+            if (UsersList.SelectedValue != null)
+            {
+                NavigationService.Navigate(WSP);
+                WSP.DataContext = dbS.usersList.ElementAt(UsersList.SelectedIndex);
+            }
+            else MessageBox.Show("Please sign up or select an user");
+            
 
         }
     }

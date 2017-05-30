@@ -10,10 +10,11 @@ namespace Finance.Infrastructure.Services
 {
    public class DatabaseService : IDatabaseService
     {
-        private bool doExecute = true;
+
+     
         private SqlConnection connection = null;
         public ISet<User> usersList = new HashSet<User>();
-
+  
       
         public void InsertUser(User user)
         {
@@ -68,7 +69,7 @@ namespace Finance.Infrastructure.Services
             }
 
             connection.Close();
-            doExecute = false;
+          
         }
 
         
