@@ -23,7 +23,7 @@ namespace Finance.Infrastructure.Pages
     public partial class WorkSpaceFrame : Page
     {
 
-        DatabaseService dbS = new DatabaseService();
+       // DatabaseService dbS = new DatabaseService();
         public WorkSpaceFrame()
         {   
             InitializeComponent();
@@ -31,7 +31,17 @@ namespace Finance.Infrastructure.Pages
 
         private void ViewProfile(object sender, RoutedEventArgs e)
         {
-            WorkSpace.Navigate(new ProfilePage());
+            var profilePage = new ProfilePage();
+            WorkSpace.Navigate(profilePage);
+            
+            profilePage.User_ID.DataContext = LoginPage.dbS.LoggedUser.UserId;
+            profilePage.Name_Surname.DataContext = LoginPage.dbS.LoggedUser.FullName;
+            profilePage.MoneyLimit.DataContext = LoginPage.dbS.LoggedUser.Money;
+            profilePage.MoneyAvailable.DataContext = LoginPage.dbS.LoggedUser.MoneyAvailable;
+            profilePage.Date.DataContext = DateTime.UtcNow.Date;
+            profilePage.DaysLeft.DataContext = DateTime.DaysInMonth(DateTime.UtcNow.Year, (int)DateTime.UtcNow.Month) - DateTime.UtcNow.Day;
+
+
         }
 
         private void YourExpenses(object sender, RoutedEventArgs e)
@@ -45,6 +55,11 @@ namespace Finance.Infrastructure.Pages
         }
 
         private void AdditionalExpenses(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SwitchProfiles(object sender, RoutedEventArgs e)
         {
 
         }

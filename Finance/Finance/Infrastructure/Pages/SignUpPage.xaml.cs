@@ -35,8 +35,8 @@ namespace Finance.Pages
         {           
            
             var user = new User(int.Parse(IdBox.Text), NameBox.Text, LastNameBox.Text);
-           
-            mainWindow.startPage.loginPage.dbS.InsertUser(user);
+            LoginPage.dbS.InsertUser(user);
+            // mainWindow.startPage.loginPage.dbS.InsertUser(user);
             mainWindow.startPage.loginPage.UsersList.Items.Refresh();
             NavigationService.Navigate(mainWindow.startPage.loginPage);
             

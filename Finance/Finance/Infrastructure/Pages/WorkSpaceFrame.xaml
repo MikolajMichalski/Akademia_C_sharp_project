@@ -29,6 +29,7 @@
             <Button Width="100" Height="50" Content="Your expenses" Margin="5" Click="YourExpenses"/>
             <Button Width="100" Height="50" Content="Add expense" Margin="5" Click="AddExpense" />
             <Button Width="100" Height="50" Content="Additional expenses" FontSize="9" Margin="5" Click="AdditionalExpenses" />
+            <Button Width="100" Height="50" Content="Switch Profiles" FontSize="9" Margin="5" Click="SwitchProfiles" />
         </StackPanel>
         <GridSplitter BorderBrush="Black" Background="Black" Width="1" Grid.Column="0" HorizontalAlignment="Right"/>
         <Grid Grid.Column="1" Width="525" >

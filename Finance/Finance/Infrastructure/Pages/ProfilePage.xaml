@@ -9,6 +9,31 @@
       Title="ProfilePage">
 
     <Grid Background="White">
-        <Label Content="NAME: "/>
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    
+                    <Label Content="User ID: " Margin="5,5,0,5" Width="120" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top"  Grid.Column="0" />
+                    <Label Content="Name and Surname: " Margin="5,5,0,5" Width="120" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top"  Grid.Column="0" />
+                    <Label Content="Money limit: " Margin="5,5,0,5" Width="120" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top"  Grid.Column="0" />
+                    <Label Content="Money available: " Margin="5,5,0,5" Width="120" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top"  Grid.Column="0" />
+                    <Label Content="Date: " Margin="5,5,0,5" Width="120" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top"  Grid.Column="0" />
+                    <Label Content="Days left: " Margin="5,5,0,5" Width="120" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top"  Grid.Column="0" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Label x:Name="User_ID" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+                    <Label x:Name="Name_Surname" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+                    <Label x:Name="MoneyLimit" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+                    <Label x:Name="MoneyAvailable" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+                    <Label x:Name="Date" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+                    <Label x:Name="DaysLeft" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+                </StackPanel>
+            </Grid>
+           
+        </StackPanel>
     </Grid>
 </Page>

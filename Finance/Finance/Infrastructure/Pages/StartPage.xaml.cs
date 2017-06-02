@@ -22,11 +22,11 @@ namespace Finance.Infrastructure.Pages
     /// </summary>
     public partial class StartPage : Page
     {
-        public LoginPage loginPage = new LoginPage();
+       public LoginPage loginPage = new LoginPage();
         public StartPage()
         {
             InitializeComponent();
-            loginPage.dbS.StartupUsersLoading();
+            LoginPage.dbS.StartupUsersLoading();
         }
 
         private void Start(object sender, RoutedEventArgs e)

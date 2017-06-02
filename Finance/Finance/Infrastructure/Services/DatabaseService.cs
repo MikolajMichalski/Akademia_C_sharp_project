@@ -14,7 +14,7 @@ namespace Finance.Infrastructure.Services
      
         private SqlConnection connection = null;
         public ISet<User> usersList = new HashSet<User>();
-  
+        public User LoggedUser;
       
         public void InsertUser(User user)
         {

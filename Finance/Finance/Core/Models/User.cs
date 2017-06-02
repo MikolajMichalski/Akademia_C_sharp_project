@@ -13,6 +13,7 @@ namespace Finance
         public string Name { get; protected set; }
         public string LastName { get; protected set; }
         public float Money { get; protected set; }
+        public float MoneyAvailable { get; set; }
         public IEnumerable<Expenses> ExpensesList { get; set; }
         public string FullName { get { return Name + " " + LastName; }  }
 

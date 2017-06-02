@@ -23,6 +23,7 @@ namespace Finance.Infrastructure.Pages
         public ProfilePage()
         {
             InitializeComponent();
+             
         }
     }
 }
