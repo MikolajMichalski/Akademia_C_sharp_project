@@ -34,8 +34,8 @@ namespace Finance.Pages
         private void Create(object sender, RoutedEventArgs e)
         {           
            
-            var user = new User(int.Parse(IdBox.Text), NameBox.Text, LastNameBox.Text);
-            LoginPage.dbS.InsertUser(user);
+            var user = new User(int.Parse(IdBox.Text), NameBox.Text, LastNameBox.Text, 0);
+            LoginPage.userService.dbS.InsertUser(user);
             // mainWindow.startPage.loginPage.dbS.InsertUser(user);
             mainWindow.startPage.loginPage.UsersList.Items.Refresh();
             NavigationService.Navigate(mainWindow.startPage.loginPage);

@@ -23,7 +23,8 @@ namespace Finance.Infrastructure.Pages
     public partial class WorkSpaceFrame : Page
     {
 
-       // DatabaseService dbS = new DatabaseService();
+        // DatabaseService dbS = new DatabaseService();
+        public static ProfilePage profilePage = new ProfilePage();
         public WorkSpaceFrame()
         {   
             InitializeComponent();
@@ -31,13 +32,13 @@ namespace Finance.Infrastructure.Pages
 
         private void ViewProfile(object sender, RoutedEventArgs e)
         {
-            var profilePage = new ProfilePage();
+           
             WorkSpace.Navigate(profilePage);
             
-            profilePage.User_ID.DataContext = LoginPage.dbS.LoggedUser.UserId;
-            profilePage.Name_Surname.DataContext = LoginPage.dbS.LoggedUser.FullName;
-            profilePage.MoneyLimit.DataContext = LoginPage.dbS.LoggedUser.Money;
-            profilePage.MoneyAvailable.DataContext = LoginPage.dbS.LoggedUser.MoneyAvailable;
+            profilePage.User_ID.DataContext = LoginPage.userService.dbS.LoggedUser.UserId;
+            profilePage.Name_Surname.DataContext = LoginPage.userService.dbS.LoggedUser.FullName;
+            profilePage.MoneyLimit.DataContext = LoginPage.userService.dbS.LoggedUser.Money;
+            profilePage.MoneyAvailable.DataContext = LoginPage.userService.dbS.LoggedUser.MoneyAvailable;
             profilePage.Date.DataContext = DateTime.UtcNow.Date;
             profilePage.DaysLeft.DataContext = DateTime.DaysInMonth(DateTime.UtcNow.Year, (int)DateTime.UtcNow.Month) - DateTime.UtcNow.Day;
 
@@ -61,7 +62,7 @@ namespace Finance.Infrastructure.Pages
 
         private void SwitchProfiles(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new LoginPage());
         }
     }
 }

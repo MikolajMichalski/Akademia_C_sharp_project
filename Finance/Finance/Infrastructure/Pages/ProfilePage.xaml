@@ -27,7 +27,10 @@
                 <StackPanel Grid.Column="1">
                     <Label x:Name="User_ID" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
                     <Label x:Name="Name_Surname" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
-                    <Label x:Name="MoneyLimit" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+                    <Grid>
+                        <Label x:Name="MoneyLimit" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" FontWeight="Bold"/>
+                        <Button Width="100" Height="25" Margin="160,5,0,5" Content="Change" Click="ChangeLimit" />
+                    </Grid>
                     <Label x:Name="MoneyAvailable" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
                     <Label x:Name="Date" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>
                     <Label x:Name="DaysLeft" Content="{Binding}" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,5,5" HorizontalContentAlignment="Left" FontWeight="Bold"/>

@@ -12,7 +12,8 @@ namespace Finance.Infrastructure.Services
 
         void StartupUsersLoading();
         void InsertUser(User user);
-   
+
+        void UpdateUser(User user);
     
     }
 }

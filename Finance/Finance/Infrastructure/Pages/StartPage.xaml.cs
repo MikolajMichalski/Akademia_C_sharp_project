@@ -26,7 +26,7 @@ namespace Finance.Infrastructure.Pages
         public StartPage()
         {
             InitializeComponent();
-            LoginPage.dbS.StartupUsersLoading();
+            LoginPage.userService.dbS.StartupUsersLoading();
         }
 
         private void Start(object sender, RoutedEventArgs e)

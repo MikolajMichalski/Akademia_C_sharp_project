@@ -15,6 +15,7 @@ namespace Finance.Infrastructure.Services
         private SqlConnection connection = null;
         public ISet<User> usersList = new HashSet<User>();
         public User LoggedUser;
+        
       
         public void InsertUser(User user)
         {
@@ -65,13 +66,39 @@ namespace Finance.Infrastructure.Services
            
             while (dataReader.Read())
             {
-                usersList.Add(new User(dataReader.GetFieldValue<int>(0), dataReader.GetString(1), dataReader.GetString(2)));
+                User user = new User(dataReader.GetFieldValue<int>(0), dataReader.GetString(1), dataReader.GetString(2), (float)dataReader.GetDouble(3));
+               
+                usersList.Add(user);
             }
 
             connection.Close();
           
         }
 
-        
+        public void UpdateUser(User user)
+        {
+            string ConnectionString = "Data Source = MIKOŁAJ\\MIKOŁAJMICHALSKI; Initial Catalog = Finance ; Integrated Security=true;";
+
+            connection = new SqlConnection(ConnectionString);
+            try
+            {
+                connection.Open();
+                MessageBox.Show("connection openned succefully");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("connection failed");
+            }
+            SqlCommand command = new SqlCommand(@" Update UsersTable SET Money = @UserMoney WHERE UserId = @userID ", connection);
+
+            command.Parameters.AddWithValue("@userID", user.UserId);
+            command.Parameters.AddWithValue("@UserMoney", user.Money);
+           
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+        }
     }
 }

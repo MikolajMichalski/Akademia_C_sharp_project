@@ -24,13 +24,13 @@ namespace Finance.Pages
     public partial class LoginPage : Page
     {
         WorkSpaceFrame WSP = new WorkSpaceFrame();
-        public static DatabaseService dbS = new DatabaseService();
+        public static UserService userService = new UserService();
         public LoginPage()
         {           
             InitializeComponent();
-         
+            UsersList.ItemsSource = userService.dbS.usersList;
             UsersList.Items.Refresh();
-            UsersList.ItemsSource = dbS.usersList;
+          
         }
 
         private void SignUp(object sender, RoutedEventArgs e)
@@ -43,8 +43,8 @@ namespace Finance.Pages
             if (UsersList.SelectedValue != null)
             {
                 NavigationService.Navigate(WSP);
-                WSP.DataContext = dbS.usersList.ElementAt(UsersList.SelectedIndex);
-                dbS.LoggedUser = dbS.usersList.ElementAt(UsersList.SelectedIndex);
+                WSP.DataContext = userService.dbS.usersList.ElementAt(UsersList.SelectedIndex);
+                userService.dbS.LoggedUser = userService.dbS.usersList.ElementAt(UsersList.SelectedIndex);
             }
             else MessageBox.Show("Please sign up or select an user");
             

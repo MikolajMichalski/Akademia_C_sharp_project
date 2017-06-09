@@ -29,7 +29,8 @@ namespace Finance
         public MainWindow()
         {            
             InitializeComponent();                        
-            MainFrame.Navigate(startPage);           
+            MainFrame.Navigate(startPage);     
+                  
         }
     }
 }

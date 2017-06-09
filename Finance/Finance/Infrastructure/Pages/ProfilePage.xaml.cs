@@ -25,5 +25,12 @@ namespace Finance.Infrastructure.Pages
             InitializeComponent();
              
         }
+
+        private void ChangeLimit(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MoneyLimitChanger());
+           
+            
+        }
     }
 }
